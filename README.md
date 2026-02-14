@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -102,6 +103,12 @@
             margin: 25px 0 15px;
         }
         
+        .page h4 {
+            font-size: 1.2em;
+            color: #2c5f2d;
+            margin: 20px 0 10px;
+        }
+        
         /* Cover Page */
         .cover-page {
             background: linear-gradient(135deg, #2c5f2d 0%, #4a8f4c 100%);
@@ -133,14 +140,13 @@
         }
         
         /* Images */
-        .image-placeholder {
-            background-color: #e0e0e0;
-            border: 2px dashed #999;
-            padding: 40px;
-            text-align: center;
-            margin: 30px 0;
-            color: #666;
-            font-style: italic;
+        .page img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         .image-group {
@@ -150,13 +156,19 @@
             flex-wrap: wrap;
         }
         
-        .image-single {
-            width: 100%;
-        }
-        
         .image-half {
             flex: 1;
             min-width: 45%;
+        }
+        
+        .image-half img {
+            margin: 0;
+            width: 100%;
+        }
+        
+        .cover-page img {
+            border: 3px solid white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
         
         /* Text Boxes */
@@ -191,13 +203,30 @@
             margin: 20px 0;
         }
         
-        /* Map and Diagram Placeholders */
-        .map-placeholder {
-            background-color: #e8f4f8;
-            border: 2px solid #4a8f8f;
-            padding: 60px;
+        /* Map and Diagram */
+        .map-container {
             text-align: center;
             margin: 30px 0;
+        }
+        
+        .map-container img {
+            border: 2px solid #4a8f8f;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #f0f0f0;
         }
         
         /* Print Styles */
@@ -218,6 +247,27 @@
 </head>
 <body>
     <div class="container">
+        
+        <!-- Page 1: Cover -->
+        <div class="page cover-page" id="page1">
+            <span class="page-number">1</span>
+            
+            <img src="cameronians-badge.png" alt="The Cameronians Regimental Badge" style="width: 250px;">
+            
+            <h1>The Cameronians<br>(Scottish Rifles)<br>Heritage Association</h1>
+            
+            <div class="subtitle">
+                BULLETIN NO. 1: WINTER 2025/26
+            </div>
+            
+            <div class="feature">
+                An Appreciation of Davie McColl
+            </div>
+            
+            <img src="davie-mccoll-piper-memorial.png" alt="Davie McColl playing pipes at memorial" style="width: 500px; margin-top: 50px;">
+            
+            <p style="margin-top: 30px; font-size: 1.2em;">See Pages 8-10</p>
+        </div>
         
         <!-- Table of Contents -->
         <div id="toc">
@@ -254,32 +304,8 @@
                 <li><a href="#page29"><span>The Shared Legacy of Edmond Michelet and George MacLeod</span><span>29</span></a></li>
                 <li><a href="#page30"><span>Why This Matters Today</span><span>30</span></a></li>
                 <li><a href="#page31"><span>Announcements</span><span>31</span></a></li>
+                <li><a href="#page32"><span>Publication Note</span><span>32</span></a></li>
             </ul>
-        </div>
-        
-        <!-- Page 1: Cover -->
-        <div class="page cover-page" id="page1">
-            <span class="page-number">1</span>
-            
-            <div class="image-placeholder">
-                [CAMERONIANS BADGE IMAGE]
-            </div>
-            
-            <h1>The Cameronians<br>(Scottish Rifles)<br>Heritage Association</h1>
-            
-            <div class="subtitle">
-                BULLETIN NO. 1: WINTER 2025/26
-            </div>
-            
-            <div class="feature">
-                An Appreciation of Davie McColl
-            </div>
-            
-            <div class="image-placeholder" style="margin-top: 50px;">
-                [IMAGE: Piper at Memorial]
-            </div>
-            
-            <p style="margin-top: 30px; font-size: 1.2em;">See Pages 8-10</p>
         </div>
         
         <!-- Page 2 -->
@@ -293,9 +319,7 @@
                 <p>The purpose of the meeting was to explore the possibility of a collaborative project with a Lycée in Normandy. Far right: M. Lucien Grillet from Evreux, Normandy.</p>
             </div>
             
-            <div class="image-placeholder">
-                [IMAGE: Group photo at Coltness High School with remembrance displays on wall]
-            </div>
+            <img src="coltness-high-school-meeting.png" alt="Group photo at Coltness High School with remembrance displays on wall">
             
             <div class="text-box">
                 <h3>March: Battle of Neuve Chapelle Commemoration, Glasgow Cathedral</h3>
@@ -304,9 +328,7 @@
                 <p>At a later meeting Ian gifted papers which provide insights into the role of Cadet Forces affiliated to the Cameronians.</p>
             </div>
             
-            <div class="image-placeholder">
-                [IMAGE: Three men in formal dress at Glasgow Cathedral]
-            </div>
+            <img src="glasgow-cathedral-neuve-chapelle.png" alt="Three men in formal dress at Glasgow Cathedral for Neuve Chapelle commemoration">
         </div>
         
         <!-- Page 3 -->
@@ -319,11 +341,11 @@
             </div>
             
             <div class="image-group">
-                <div class="image-placeholder image-half">
-                    [IMAGE: Flag ceremony in Tórshavn with crowds]
+                <div class="image-half">
+                    <img src="faroe-islands-flag-ceremony-crowd.png" alt="Flag ceremony in Tórshavn with crowds">
                 </div>
-                <div class="image-placeholder image-half">
-                    [IMAGE: Speaker at ceremony with Cameronians members]
+                <div class="image-half">
+                    <img src="faroe-islands-flag-ceremony-speaker.png" alt="Speaker at Faroe Islands ceremony with Cameronians members">
                 </div>
             </div>
             
@@ -331,9 +353,7 @@
                 <h3>May: Cameronians Sunday, Douglas</h3>
             </div>
             
-            <div class="image-placeholder">
-                [IMAGE: Three Cameronians members at Douglas outdoor event]
-            </div>
+            <img src="douglas-cameronians-sunday-outdoor.png" alt="Cameronians members at Douglas outdoor event">
         </div>
         
         <!-- Page 4 -->
@@ -344,17 +364,13 @@
                 <h3>May: Cameronians Sunday, Douglas</h3>
             </div>
             
-            <div class="image-placeholder">
-                [IMAGE: Group of Cameronians members outside Douglas Parish Hall]
-            </div>
+            <img src="douglas-parish-hall-group.png" alt="Group of Cameronians members outside Douglas Parish Hall">
             
             <div class="text-box">
                 <h3>August: Dalserf Church 370th Anniversary Service</h3>
             </div>
             
-            <div class="image-placeholder">
-                [IMAGE: Guard of honour at Dalserf Church]
-            </div>
+            <img src="dalserf-church-guard-of-honour.png" alt="Guard of honour at Dalserf Church">
         </div>
         
         <!-- Page 5 -->
@@ -366,17 +382,15 @@
             </div>
             
             <div class="image-group">
-                <div class="image-placeholder image-half">
-                    [IMAGE: Don Turrell receiving commemorative gift]
+                <div class="image-half">
+                    <img src="don-turrell-receiving-gift.png" alt="Don Turrell receiving commemorative gift at Low Parks Museum">
                 </div>
-                <div class="image-placeholder image-half">
-                    [IMAGE: Don Turrell in formal dress with medals]
+                <div class="image-half">
+                    <img src="don-turrell-formal-dress.png" alt="Don Turrell in formal dress with medals">
                 </div>
             </div>
             
-            <div class="image-placeholder">
-                [IMAGE: Guard of Honour with Don Turrell at Low Parks Museum]
-            </div>
+            <img src="don-turrell-guard-of-honour.png" alt="Guard of Honour with Don Turrell at Low Parks Museum">
             
             <div class="highlight-box">
                 <p>By chance a small group visiting Normandy for the D-Day Commemorations met Don Turrell and his team from the Tax Charity for Military Veterans at Arromanches. As a result it was possible to work with the staff at Low Parks Museum, and to provide a Guard of Honour at his planned visit to Hamilton.</p>
@@ -395,9 +409,7 @@
                 <h3>August: Battle of Dunkeld Commemoration Service, Dunkeld Cathedral</h3>
             </div>
             
-            <div class="image-placeholder">
-                [IMAGE: Re-enactors in 17th century costume meeting with Cameronians members at memorial]
-            </div>
+            <img src="dunkeld-erskines-regiment-reenactors.png" alt="Erskine's Regiment re-enactors in 17th century costume meeting with Cameronians members at Dunkeld memorial">
             
             <div class="highlight-box">
                 <p>Attendance at the Annual Battle Commemoration Service was enhanced this year through the participation in an adjacent event by representatives of "Erskine's Regiment" - an enthusiastic team that provides historical interpretation and re-enactment focused on 17th century.</p>
@@ -407,9 +419,7 @@
                 <h3>October: Liberation of Walcheren Commemoration, Low Parks Museum</h3>
             </div>
             
-            <div class="image-placeholder">
-                [IMAGE: Cameronians members at Low Parks Museum entrance]
-            </div>
+            <img src="low-parks-museum-walcheren.png" alt="Cameronians members at Low Parks Museum for Walcheren commemoration">
         </div>
         
         <!-- Page 7 -->
@@ -420,13 +430,9 @@
                 <h3>November: Remembrance Sunday, Bridge of Allan</h3>
             </div>
             
-            <div class="image-placeholder">
-                [IMAGE: Remembrance service at Bridge of Allan war memorial]
-            </div>
+            <img src="bridge-of-allan-remembrance.png" alt="Remembrance service at Bridge of Allan war memorial">
             
-            <div class="image-placeholder">
-                [IMAGE: Wreath with Cameronians badge and remembrance card]
-            </div>
+            <img src="remembrance-wreath-cameronians-badge.png" alt="Wreath with Cameronians badge and remembrance card">
             
             <div class="highlight-box">
                 <p>Services were attended at traditional venues, including Douglas, Kelvingrove and Perth. Members also attend services at locations which have personal resonance for them.</p>
@@ -447,9 +453,7 @@
             
             <p>He famously insisted that only genuine artefacts be used to dress the mannequin displays. To this end, he ensured that <strong>no effort or expense was spared</strong> to acquire original uniforms and period-correct equipment. He would settle for nothing less than accuracy, ensuring that every button, strap, and stitch was authentic to each Battalion's identity.</p>
             
-            <div class="image-placeholder">
-                [IMAGE: Davie McColl with fellow member in formal Cameronians dress]
-            </div>
+            <img src="davie-mccoll-with-colleague.png" alt="Davie McColl with fellow Cameronians member in formal dress">
             
             <div class="quote">
                 <p>The Cameronians Room at the museum was not merely a project to Davie; it permeated his heart and soul.</p>
@@ -469,13 +473,9 @@
                 <p><strong>Bottom:</strong> Davie's Interment Service</p>
             </div>
             
-            <div class="image-placeholder">
-                [IMAGE: Group with wooden box containing Davie's ashes at museum]
-            </div>
+            <img src="davie-ashes-transport-netherlands.png" alt="Group with wooden box containing Davie's ashes at Netherlands museum">
             
-            <div class="image-placeholder">
-                [IMAGE: Piper in military vehicle at interment service]
-            </div>
+            <img src="davie-interment-service-piper.png" alt="Piper in military vehicle at Davie's interment service">
         </div>
         
         <!-- Page 10 -->
@@ -496,9 +496,7 @@
                 <p>In October, following his instructions, a series of 5 wall boards depicting the role of the Regular and Territorial Battalions in WW2 was prepared and presented to the Museum for inclusion in the Cameronians Room.</p>
             </div>
             
-            <div class="image-placeholder">
-                [IMAGE: Museum director with wall boards showing Cameronians WW2 history]
-            </div>
+            <img src="nieuwdorp-museum-wall-boards.png" alt="Museum director with wall boards showing Cameronians WW2 history">
         </div>
         
         <!-- Page 11 -->
@@ -507,8 +505,8 @@
             
             <h2>LESLEY POINTON'S CHILDHOOD MEMORIES OF LIFE IN ADEN<br>(REF: NO 26/01)</h2>
             
-            <div class="map-placeholder">
-                [MAP: Gulf of Aden region showing Aden, Yemen, Saudi Arabia, Oman, Somalia, Ethiopia, Eritrea]
+            <div class="map-container">
+                <img src="aden-gulf-map.png" alt="Map of Gulf of Aden region showing Aden, Yemen, Saudi Arabia, Oman, Somalia, Ethiopia, and Eritrea">
             </div>
             
             <div class="highlight-box">
@@ -517,9 +515,7 @@
                 <p>Aden was originally of interest to Britain as an anti-piracy station to protect shipping on the routes to India. With the opening of the Suez Canal in 1869, its commercial and strategic importance increased considerably, serving as it did as a coaling station and important transit port for trade between British India and the Far East, and Europe.</p>
             </div>
             
-            <div class="image-placeholder">
-                [IMAGE: Historic photograph of Aden harbour and volcanic mountains]
-            </div>
+            <img src="aden-harbour-historic.png" alt="Historic photograph of Aden harbour and volcanic mountains">
         </div>
         
         <!-- Page 12 -->
@@ -548,9 +544,7 @@
             
             <p>In class, we practiced 'diving under the desks' just as often as we practiced our spelling. As a kid, life felt strangely exciting.</p>
             
-            <div class="image-placeholder">
-                [IMAGE: British military school bus in Aden]
-            </div>
+            <img src="aden-school-bus.png" alt="British military school bus in Aden">
         </div>
         
         <!-- Page 13 -->
@@ -567,9 +561,7 @@
             
             <p>We lived behind barbed wire and "blast walls," and there was always an armed guard at the front door of the building.</p>
             
-            <div class="image-placeholder">
-                [IMAGE: Ma'alla Straight apartment blocks in Aden]
-            </div>
+            <img src="aden-maalla-straight-apartments.png" alt="Ma'alla Straight apartment blocks in Aden">
             
             <div class="highlight-box">
                 <p>We lived on the Ma'alla Straight which was a long stretch of modern blocks. The flats were actually quite nice and had air conditioning.</p>
@@ -586,9 +578,7 @@
             
             <p>You had to swim inside these massive steel nets because of sharks. But even then to be totally safe you had to stay in the "protected zones" or you'd be in the line of sight for snipers hiding on the cliffs.</p>
             
-            <div class="image-placeholder">
-                [IMAGE: Tarshyne Beach with swimmers and protective zones]
-            </div>
+            <img src="aden-tarshyne-beach.png" alt="Tarshyne Beach in Aden with swimmers and protective zones">
             
             <h3>High-Stakes Shopping</h3>
             
@@ -601,9 +591,7 @@
         <div class="page" id="page15">
             <span class="page-number">15</span>
             
-            <div class="image-placeholder">
-                [IMAGE: British soldiers on patrol in Crater shopping district]
-            </div>
+            <img src="aden-crater-soldiers-patrol.png" alt="British soldiers on patrol in Crater shopping district">
             
             <p>Crater was the old part of town, built right inside a dormant volcano.</p>
             
@@ -618,13 +606,9 @@
         <div class="page" id="page16">
             <span class="page-number">16</span>
             
-            <div class="image-placeholder">
-                [IMAGE: British families with children and armed guard in Aden]
-            </div>
+            <img src="aden-families-armed-guard.png" alt="British families with children and armed guard in Aden">
             
-            <div class="image-placeholder">
-                [IMAGE: British soldiers on rooftop surveillance positions]
-            </div>
+            <img src="aden-soldiers-rooftop-surveillance.png" alt="British soldiers on rooftop surveillance positions">
             
             <h3>RCT Ambush: June 1967</h3>
             
@@ -703,12 +687,10 @@
             
             <h2>REF No: 26/02 - Reflections of D-Day<br>Veteran, Don Turrell (9th Battalion)</h2>
             
-            <div class="image-placeholder">
-                [IMAGE: Colorized portrait of young Don Turrell in Cameronians uniform with cap badge]
-                <p style="margin-top: 10px;"><strong>9th Battalion - The Cameronians</strong></p>
-            </div>
+            <img src="don-turrell-young-portrait.png" alt="Colorized portrait of young Don Turrell in Cameronians uniform with cap badge" style="width: 500px;">
+            <p style="text-align: center; margin-top: 10px; font-weight: bold;">9th Battalion - The Cameronians</p>
             
-            <p>Standing here in Hamilton at Low Parks Museum, just weeks after my 100th birthday, is something I never thought possible.</p>
+            <p style="margin-top: 30px;">Standing here in Hamilton at Low Parks Museum, just weeks after my 100th birthday, is something I never thought possible.</p>
             
             <p>Looking round the Cameronians Collection, I am reminded of the boy I was - a 17-year-old Londoner who lied about his age just to get into the fight.</p>
         </div>
@@ -843,51 +825,51 @@
             
             <h3>2026</h3>
             
-            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-                <tr style="background-color: #f0f0f0;">
-                    <td style="padding: 10px; border: 1px solid #ddd; width: 30%;"><strong>MARCH</strong></td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">NEUVE CHAPELLE COMMEMORATION - GLASGOW CATHEDRAL</td>
+            <table>
+                <tr>
+                    <td style="width: 30%;"><strong>MARCH</strong></td>
+                    <td>NEUVE CHAPELLE COMMEMORATION - GLASGOW CATHEDRAL</td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>MAY</strong></td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">CONVENTICLE - DOUGLAS</td>
-                </tr>
-                <tr style="background-color: #f0f0f0;">
-                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>JUNE</strong></td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">NEWSLETTER 2: SUMMER</td>
+                    <td><strong>MAY</strong></td>
+                    <td>CONVENTICLE - DOUGLAS</td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>JUNE</strong></td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">FAROES CONSTITUTION DAY: TÓRSHAVN, 5 JUNE</td>
-                </tr>
-                <tr style="background-color: #f0f0f0;">
-                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>AUGUST</strong></td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">DUNKELD COMMEMORATION - DUNKELD</td>
+                    <td><strong>JUNE</strong></td>
+                    <td>NEWSLETTER 2: SUMMER</td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>SEPTEMBER</strong></td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">PUBLIC LECTURE - LOW PARKS MUSEUM, HAMILTON</td>
-                </tr>
-                <tr style="background-color: #f0f0f0;">
-                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>OCTOBER</strong></td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">MALLARD WALK - NIEUWDORP</td>
+                    <td><strong>JUNE</strong></td>
+                    <td>FAROES CONSTITUTION DAY: TÓRSHAVN, 5 JUNE</td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>NOVEMBER</strong></td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">REMEMBRANCE (SUNDAY 8 NOVEMBER) - VARIOUS LOCATIONS</td>
+                    <td><strong>AUGUST</strong></td>
+                    <td>DUNKELD COMMEMORATION - DUNKELD</td>
                 </tr>
-                <tr style="background-color: #f0f0f0;">
-                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>DECEMBER</strong></td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">NEWSLETTER 3: WINTER</td>
+                <tr>
+                    <td><strong>SEPTEMBER</strong></td>
+                    <td>PUBLIC LECTURE - LOW PARKS MUSEUM, HAMILTON</td>
+                </tr>
+                <tr>
+                    <td><strong>OCTOBER</strong></td>
+                    <td>MALLARD WALK - NIEUWDORP</td>
+                </tr>
+                <tr>
+                    <td><strong>NOVEMBER</strong></td>
+                    <td>REMEMBRANCE (SUNDAY 8 NOVEMBER) - VARIOUS LOCATIONS</td>
+                </tr>
+                <tr>
+                    <td><strong>DECEMBER</strong></td>
+                    <td>NEWSLETTER 3: WINTER</td>
                 </tr>
             </table>
             
             <h3>2027</h3>
             
-            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-                <tr style="background-color: #f0f0f0;">
-                    <td style="padding: 10px; border: 1px solid #ddd; width: 30%;"><strong>JANUARY</strong></td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">AGM - LOW PARKS MUSEUM</td>
+            <table>
+                <tr>
+                    <td style="width: 30%;"><strong>JANUARY</strong></td>
+                    <td>AGM - LOW PARKS MUSEUM</td>
                 </tr>
             </table>
             
@@ -961,11 +943,9 @@
             
             <p><strong>(6) Conflict of Interest:</strong> Any Committee member with a conflict of interest in a matter being discussed must declare it and may be required to withdraw from the discussion and voting.</p>
             
-            <h3>Article VI. Annual General Meeting (AGM) and Plebiscite Purpose</h3>
+            <h3>Article VI. Annual General Meeting (AGM) and Plebiscite</h3>
             
-            <p>An annual democratic decision-making forum shall be held to receive reports, review activities, plan for the year ahead, and allocate budgets.</p>
-            
-            <p><strong>(1)</strong></p>
+            <p><strong>Purpose:</strong> An annual democratic decision-making forum shall be held to receive reports, review activities, plan for the year ahead, and allocate budgets.</p>
             
             <p><strong>(2) Voting (Plebiscite):</strong> Decisions requiring a full member vote (including elections and constitutional amendments) shall be determined by a digital Plebiscite.</p>
             
@@ -991,9 +971,7 @@
             
             <h2>Greetings from Evreux</h2>
             
-            <div class="image-placeholder">
-                [IMAGE: 2022/2023 Collage of Lycée activities and commemorative events]
-            </div>
+            <img src="evreux-2022-2023-collage.png" alt="Collage of 2022/2023 Lycée activities and commemorative events">
             
             <div class="highlight-box" style="background-color: #d4e9f7; margin-top: 30px;">
                 <p style="text-align: center; font-size: 1.1em; font-style: italic;">
